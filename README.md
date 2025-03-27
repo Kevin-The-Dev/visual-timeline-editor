@@ -40,7 +40,7 @@ A visual timeline editor that allows users to add, manipulate, and time media el
 git clone https://github.com/Kevin-The-Dev/visual-timeline-editor.git
 
 # Navigate to the project directory
-cd media-canvas-editor
+cd visual-timeline-editor
 
 # Install dependencies
 npm install
