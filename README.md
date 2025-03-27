@@ -1,69 +1,91 @@
-# Welcome to your Lovable project
 
-## Project info
+# Media Canvas Editor
 
-**URL**: https://lovable.dev/projects/592a1d6a-fc20-4b62-9a7d-edd4f3adb87e
+A visual timeline editor that allows users to add, manipulate, and time media elements on a canvas.
 
-## How can I edit this code?
+![Media Canvas Editor Screenshot](https://i.imgur.com/YourScreenshot.jpg)
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Media Management**: Upload and add images or videos to the canvas
+- **Interactive Canvas**: Drag, resize, and position media elements freely
+- **Properties Panel**: Control media dimensions (width/height) and timing (start/end) through an intuitive interface
+- **Timeline Controls**: Play/pause functionality with visual timeline slider
+- **Time-Based Visibility**: Media elements appear and disappear based on their configured time ranges
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/592a1d6a-fc20-4b62-9a7d-edd4f3adb87e) and start prompting.
+## Core Functionality
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Media Addition**: Upload photos and videos to place on the canvas
+2. **Interactive Manipulation**: Drag and resize media elements with intuitive controls
+3. **Property Controls**: Adjust width, height, start time, and end time via the properties panel
+4. **Timeline Playback**: Media elements appear and disappear according to their configured time ranges
 
-**Use your preferred IDE**
+## Technology Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Framework**: React with TypeScript
+- **UI Components**: Custom styled components
+- **State Management**: React hooks for local state management
+- **Styling**: Custom CSS for precise control over appearance
+- **Media Handling**: Native browser APIs for media manipulation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting Started
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Node.js 14+ and npm installed
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/media-canvas-editor.git
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Navigate to the project directory
+cd media-canvas-editor
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Usage
 
-**Use GitHub Codespaces**
+1. **Add Media**: Click the upload button or use one of the provided stock videos
+2. **Position Media**: Drag and resize the media element on the canvas
+3. **Configure Properties**: Use the properties panel to set precise dimensions and timing
+4. **Preview**: Use the playback controls to see how media appears and disappears based on the timeline
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/           # UI Components
+│   ├── Canvas.tsx        # Canvas for media manipulation
+│   ├── MediaEditor.tsx   # Main editor component
+│   ├── PropertiesPanel.tsx  # Media properties controls
+│   └── SidebarPanel.tsx  # Left sidebar with media options
+├── styles/               # CSS styles
+│   └── MediaEditor.css   # Main styling for the editor
+└── pages/                # Application pages
+    └── Index.tsx         # Main entry point
+```
 
-This project is built with .
+## Future Enhancements
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Export functionality to save projects
+- Additional media effects and transitions
+- Multi-track timeline support
+- Collaborative editing capabilities
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/592a1d6a-fc20-4b62-9a7d-edd4f3adb87e) and click on Share -> Publish.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## I want to use a custom domain - is that possible?
+## Acknowledgments
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- Inspired by professional media editing software
+- Developed as a demonstration of interactive web capabilities
