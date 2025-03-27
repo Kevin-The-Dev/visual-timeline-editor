@@ -37,7 +37,7 @@ A visual timeline editor that allows users to add, manipulate, and time media el
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/media-canvas-editor.git
+git clone https://github.com/Kevin-The-Dev/media-canvas-editor.git
 
 # Navigate to the project directory
 cd media-canvas-editor
