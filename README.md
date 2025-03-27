@@ -1,4 +1,4 @@
-
+[
 # Media Canvas Editor
 
 A visual timeline editor that allows users to add, manipulate, and time media elements on a canvas.
@@ -89,3 +89,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Inspired by professional media editing software
 - Developed as a demonstration of interactive web capabilities
+](https://github.com/Kevin-The-Dev/visual-timeline-editor)
