@@ -5,12 +5,14 @@ import SidebarPanel from './SidebarPanel';
 import Canvas from './Canvas';
 import PropertiesPanel from './PropertiesPanel';
 
+// Stock videos for demo purposes
 const stockVideos = [
   { id: 1, src: 'https://assets.mixkit.co/videos/preview/mixkit-mountain-range-view-from-a-distance-43784-large.mp4', duration: '0:14' },
   { id: 2, src: 'https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4', duration: '0:15' },
   { id: 3, src: 'https://assets.mixkit.co/videos/preview/mixkit-elevated-landscape-view-over-hills-56272-large.mp4', duration: '0:29' },
 ];
 
+// AI avatars for demo purposes
 const aiAvatars = [
   { id: 1, src: 'https://randomuser.me/api/portraits/women/44.jpg' },
   { id: 2, src: 'https://randomuser.me/api/portraits/women/68.jpg' },
@@ -18,6 +20,7 @@ const aiAvatars = [
   { id: 4, src: 'https://randomuser.me/api/portraits/women/24.jpg' },
 ];
 
+// Media interface
 interface Media {
   id: string;
   type: 'image' | 'video';
@@ -36,8 +39,10 @@ const MediaEditor: React.FC = () => {
   const [totalDuration, setTotalDuration] = useState(60); // Default 60 seconds
   const playIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Get the selected media item
   const selectedMedia = mediaItems.find(media => media.id === selectedMediaId);
 
+  // Handle file upload
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -63,6 +68,7 @@ const MediaEditor: React.FC = () => {
     reader.readAsDataURL(file);
   };
 
+  // Handle adding stock video
   const handleAddStockVideo = (video: typeof stockVideos[0]) => {
     const newMedia: Media = {
       id: `media-${Date.now()}`,
@@ -78,10 +84,12 @@ const MediaEditor: React.FC = () => {
     setSelectedMediaId(newMedia.id);
   };
 
+  // Handle media selection
   const handleMediaSelect = (mediaId: string) => {
     setSelectedMediaId(mediaId);
   };
 
+  // Handle media movement
   const handleMediaMove = (mediaId: string, newPosition: { x: number; y: number }) => {
     setMediaItems(mediaItems.map(item => 
       item.id === mediaId 
@@ -90,6 +98,7 @@ const MediaEditor: React.FC = () => {
     ));
   };
 
+  // Handle media resizing
   const handleMediaResize = (mediaId: string, newSize: { width: number; height: number }) => {
     setMediaItems(mediaItems.map(item => 
       item.id === mediaId 
@@ -98,6 +107,7 @@ const MediaEditor: React.FC = () => {
     ));
   };
 
+  // Handle media updates (from properties panel)
   const handleMediaUpdate = (mediaId: string, updates: Partial<Media>) => {
     setMediaItems(mediaItems.map(item => 
       item.id === mediaId 
@@ -106,6 +116,7 @@ const MediaEditor: React.FC = () => {
     ));
   };
 
+  // Toggle playback state
   const togglePlayback = () => {
     if (isPlaying) {
       if (playIntervalRef.current) {
@@ -131,6 +142,7 @@ const MediaEditor: React.FC = () => {
     setIsPlaying(!isPlaying);
   };
 
+  // Clean up interval on unmount
   useEffect(() => {
     return () => {
       if (playIntervalRef.current) {
@@ -139,12 +151,14 @@ const MediaEditor: React.FC = () => {
     };
   }, []);
 
+  // Format time for display
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}.${(seconds % 1).toFixed(1).substring(2)}`;
   };
 
+  // Handle timeline click
   const handleTimelineClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const clickPositionRatio = (e.clientX - rect.left) / rect.width;
@@ -182,7 +196,7 @@ const MediaEditor: React.FC = () => {
       <div className="editor-main">
         <div className="editor-header">
           <div className="project-info">
-            <div className="project-title">Project Name</div>
+            <div className="project-title">Media Canvas Editor</div>
             <div className="save-status">
               <Clock size={16} />
               <span>Log in to save progress</span>

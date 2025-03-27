@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { X } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 interface Media {
   id: string;
@@ -62,7 +64,7 @@ const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ media, onUpdate }) =>
           <div className="property-row">
             <div className="property-label">Width</div>
             <div className="property-input">
-              <input 
+              <Input 
                 type="number" 
                 value={media.size.width} 
                 onChange={handleWidthChange}
@@ -73,7 +75,7 @@ const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ media, onUpdate }) =>
           <div className="property-row">
             <div className="property-label">Height</div>
             <div className="property-input">
-              <input 
+              <Input 
                 type="number" 
                 value={media.size.height} 
                 onChange={handleHeightChange}
@@ -86,9 +88,9 @@ const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ media, onUpdate }) =>
         <div className="property-group">
           <div className="property-group-title">Timing</div>
           <div className="property-row">
-            <div className="property-label">Start Time</div>
+            <div className="property-label">Start Time (sec)</div>
             <div className="property-input">
-              <input 
+              <Input 
                 type="number" 
                 value={media.startTime} 
                 onChange={handleStartTimeChange}
@@ -98,9 +100,9 @@ const PropertiesPanel: React.FC<PropertiesPanelProps> = ({ media, onUpdate }) =>
             </div>
           </div>
           <div className="property-row">
-            <div className="property-label">End Time</div>
+            <div className="property-label">End Time (sec)</div>
             <div className="property-input">
-              <input 
+              <Input 
                 type="number" 
                 value={media.endTime} 
                 onChange={handleEndTimeChange}
